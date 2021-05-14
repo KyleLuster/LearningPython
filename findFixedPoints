@@ -1,0 +1,29 @@
+import random
+cards = [1, 2, 3, 4, 5, 6, 7, 8]
+cards2 = [9,9,9,9,9,9,9,9]
+cards3 = [19,19,19,19,19,19,19,19]
+
+print("Original Lineup")
+print(cards)
+
+print("First selection")
+cards = [1, 2, 3, 4, 5, 6, 7, 8]
+random.shuffle(cards)
+cards2 = cards
+print(cards2)
+
+print("Second selection")
+cards = [1, 2, 3, 4, 5, 6, 7, 8]
+random.shuffle(cards)
+cards3 = cards
+print(cards3)
+
+print("Number of fixed points")
+count = 0
+i = 0
+for x in cards2:
+  if cards2[i] == cards3[i]:
+    count+=1
+  i+=1
+
+print(count)
