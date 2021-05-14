@@ -1,0 +1,82 @@
+#equations are in the form r = x_coeff*x + y_coeff*y
+#equation data is (r, xc, x, yc, y)
+
+#print the equation
+def printLinEq(eq):
+  print(eq[0], '=',eq[1], '*', eq[2], '+', eq[3], '*', eq[4] )
+
+
+#reduce the equation
+def reduce(eq):
+  #return the reduced equation and true if r != 0
+  #return false otherwise
+  x = eq[4]
+  y = eq[0]
+  yc = (-1)*(x//y)
+  r = x%y  
+  if r == 0:
+    return (r,1,x,yc,y), False
+  else:
+    return (r,1,x,yc,y), True
+
+
+#the factors; I chose different numbers than Ms. Fritz
+#just for the fun of it
+x = 47
+y = 30
+print("x is: ",x)
+print("y is: ",y)
+#create the initial equation (r,xc,x,yc,y)
+linearEq = (x%y, 1, x, (x//y)*(-1), y)
+
+# list to store the equations
+eqLst = []
+
+#while the remainder isn't 0
+while linearEq[0] != 0:
+  #put the equation in the list
+  eqLst.append(linearEq)
+  #reduce the equation
+  linearEq = reduce(linearEq)[0]
+  
+
+
+#ready for back substitutio
+
+sz = len(eqLst)
+#currEq is last equation in the list
+currEq = eqLst[sz-1]
+#remove it from the list
+eqLst.pop(sz-1)
+#make this the working equation
+workingEq = currEq
+
+#while there are more equations to process
+while len(eqLst)>0:
+  sz = len(eqLst)
+
+  #get the new x and new y values 
+  #the new x is the previous equation's x
+  newx = eqLst[sz-1][2]
+  #the new y is the current equation's x
+  newy = currEq[2]
+
+  #get the new x coeff and y coeff  
+  
+  #the new x coeff is the working equation's 
+  #y_coeff * the prev equation's x coeff
+  newxc = workingEq[3]*eqLst[sz-1][1]
+  
+  #the new y coeff is the working equation's x coeff +
+  #the working equation's y coeff * the prev equation's y coeff
+  newyc = workingEq[1] + workingEq[3]*eqLst[sz-1][3]  
+
+  #create a new working equation
+  workingEq = (1, newxc, newx, newyc, newy)
+
+  #print it for testing
+  printLinEq(workingEq)
+
+  #get the next equation from the list and remove from list
+  currEq = eqLst[sz-1]
+  eqLst.pop(sz-1)
