@@ -1,0 +1,11 @@
+def caesar(input,s):
+  changed = ""
+  for i in range(len(input)):
+        char = input[i]
+        changed += chr((ord(char) + s - 97) % 26 + 97)
+  return changed
+
+input = "this is a test"
+s = 7
+print ("Original: " + input)
+print ("Encoded: " + caesar(input,s))
