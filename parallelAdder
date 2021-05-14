@@ -1,0 +1,80 @@
+#returns half-adder sum
+def sumHalf(p, q):
+    sumHalf = 0
+    if((p == 1) or (q == 1)):   #functions as our XOR
+        if(p != q):             #ensures we have a single instance of 1
+            sumHalf = 1
+    return sumHalf
+
+#returns half-adder carry
+def carryHalf(p, q):
+    carryHalf = 0
+    if(p == 1 and q ==1):   #functions as our AND
+        carryHalf = 1
+    return carryHalf
+
+#returns full-adder sum
+def sumFull(p, q, r):
+    sumFull = 0
+    if(p == 1 or q ==1 or r == 1):
+        if((p + q + r)%2 ==1):      
+            sumFull = 1
+    return sumFull
+
+#returns full-adder carry
+def carryFull(p,q,r):
+    carryFull = 0
+    if(p == 1 or q == 1 or r == 1):
+        if((p+q+r) >= 2):   #more than two 1s triggers a carry
+            carryFull = 1
+    return carryFull
+
+#gets the sum for the parallel using prior functions
+def parallel(a, b, c, d, e, f):
+    l = sumHalf(c, f)   #evaluating last digit in both numbers
+    k = sumFull(carryHalf(c, f), b, e)
+    j = sumFull(carryFull(carryHalf(c, f), b, e), a, d)
+    h = carryFull(carryFull(carryHalf(c, f), b, e), a, d)
+
+    print(" ")
+    print("Parallel-adder")
+    print(str(a)+str(b)+str(c)+" + "+str(d)+str(e)+str(f)+" = "+str(h)+str(j)+str(k)+str(l))
+#concat results for print
+
+#prints half-adder
+def printHalfAdder():
+    print("Half-adder")   #looping through and printing
+    i = 0
+    j = 0
+    while (i <= 1):
+        i += 1
+        j = 0
+        while (j <= 1):
+            print("p= "+str(i-1)+"  q= "+str(j)+" | C = "+str(carryHalf(i-1, j)) +"  S = "+str(sumHalf(i-1, j)))
+            j += 1
+
+#pprints full-adder
+def printFullAdder():
+
+    print(" ")
+    
+    print("Full-adder")   #looping through and printing
+    p = 0
+    q = 0
+    r = 0
+    while (p <= 1):
+        p += 1
+        q = 0
+        while (q <= 1):
+            q += 1
+            r = 0
+            while (r <= 1):
+                print("p= "+str(p-1)+"  q= "+str(q-1)+"  r= "+str(r)+" | C = "+str(carryFull(p-1, q-1, r)) +"  S = "+str(sumFull(p-1, q-1, r)))
+                r += 1
+
+
+#calling our functions
+printHalfAdder()
+printFullAdder()
+parallel(0,1,1,1,1,0)   #results in carrying over
+                        #as seen by the new num place
