@@ -1,0 +1,15 @@
+def a_seq(f, n, d):
+
+   ans = f + (n - 1)*d
+   return ans
+
+f = input("Give first term " );
+input_f = int(f) 
+
+n = input("Enter terms " );
+input_n = int(n) 
+
+d = input("Give common difference " );
+input_d = int(d) 
+
+print(a_seq(input_f, input_n , input_d))
