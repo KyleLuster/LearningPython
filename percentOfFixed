@@ -1,0 +1,271 @@
+#Run for 100
+import random
+cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+cards2 = [9,9,9,9,9,9,9,9, 9]
+cards3 = [19,19,19,19,19,19,19,19, 19]
+
+d = 0
+zero = 0
+one = 0
+two = 0
+three = 0
+four = 0
+five = 0
+six = 0
+seven = 0
+eight = 0
+while d<100:
+  #print("Original Lineup")
+  #print(cards)
+
+  #print("First selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards2 = cards
+  #print(cards2)
+
+  #print("Second selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards3 = cards
+  #print(cards3)
+
+  #print("Number of fixed points")
+  count = 0
+  i = 0
+  for x in cards2:
+    if cards2[i] == cards3[i]:
+      count+=1
+    i+=1
+
+
+  if count == 0:
+    zero+=1
+
+  if count == 1:
+    one+=1
+
+  if count == 2:
+    two+=1
+
+  if count == 3:
+    three+=1
+
+  if count == 4:
+    four+=1
+
+  if count == 5:
+    five+=1
+
+  if count == 6:
+    six+=1
+
+  if count == 7:
+    seven+=1
+
+  if count == 8:
+    eight+=1
+
+  #print(count)
+  d+=1
+
+print("Run 100 times")
+print("Percent of 0s")
+print(zero/100)
+print("Percent of 1s")
+print(one/100)
+print("Percent of 2s")
+print(two/1000)
+print("Percent of 3s")
+print(three/100)
+print("Percent of 4s")
+print(four/100)
+print("Percent of 5s")
+print(five/100)
+print("Percent of 6s")
+print(six/100)
+print("Percent of 7s")
+print(seven/100)
+print("Percent of 8s")
+print(eight/100)
+
+
+#Run for 1000
+cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+cards2 = [9,9,9,9,9,9,9,9, 9]
+cards3 = [19,19,19,19,19,19,19,19, 19]
+
+d = 0
+zero = 0
+one = 0
+two = 0
+three = 0
+four = 0
+five = 0
+six = 0
+seven = 0
+eight = 0
+while d<1000:
+  #print("Original Lineup")
+  #print(cards)
+
+  #print("First selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards2 = cards
+  #print(cards2)
+
+  #print("Second selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards3 = cards
+  #print(cards3)
+
+  #print("Number of fixed points")
+  count = 0
+  i = 0
+  for x in cards2:
+    if cards2[i] == cards3[i]:
+      count+=1
+    i+=1
+
+
+  if count == 0:
+    zero+=1
+
+  if count == 1:
+    one+=1
+
+  if count == 2:
+    two+=1
+
+  if count == 3:
+    three+=1
+
+  if count == 4:
+    four+=1
+
+  if count == 5:
+    five+=1
+
+  if count == 6:
+    six+=1
+
+  if count == 7:
+    seven+=1
+
+  if count == 8:
+    eight+=1
+
+  #print(count)
+  d+=1
+
+print("Run 1000 times")
+print("Percent of 0s")
+print(zero/1000)
+print("Percent of 1s")
+print(one/1000)
+print("Percent of 2s")
+print(two/1000)
+print("Percent of 3s")
+print(three/1000)
+print("Percent of 4s")
+print(four/1000)
+print("Percent of 5s")
+print(five/1000)
+print("Percent of 6s")
+print(six/1000)
+print("Percent of 7s")
+print(seven/1000)
+print("Percent of 8s")
+print(eight/1000)
+
+#Run for 10000
+cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+cards2 = [9,9,9,9,9,9,9,9, 9]
+cards3 = [19,19,19,19,19,19,19,19, 19]
+
+d = 0
+zero = 0
+one = 0
+two = 0
+three = 0
+four = 0
+five = 0
+six = 0
+seven = 0
+eight = 0
+while d<10000:
+  #print("Original Lineup")
+  #print(cards)
+
+  #print("First selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards2 = cards
+  #print(cards2)
+
+  #print("Second selection")
+  cards = [1, 2, 3, 4, 5, 6, 7, 8]
+  random.shuffle(cards)
+  cards3 = cards
+  #print(cards3)
+
+  #print("Number of fixed points")
+  count = 0
+  i = 0
+  for x in cards2:
+    if cards2[i] == cards3[i]:
+      count+=1
+    i+=1
+
+
+  if count == 0:
+    zero+=1
+
+  if count == 1:
+    one+=1
+
+  if count == 2:
+    two+=1
+
+  if count == 3:
+    three+=1
+
+  if count == 4:
+    four+=1
+
+  if count == 5:
+    five+=1
+
+  if count == 6:
+    six+=1
+
+  if count == 7:
+    seven+=1
+
+  if count == 8:
+    eight+=1
+
+  #print(count)
+  d+=1
+
+print("Run 10000 times")
+print("Percent of 0s")
+print(zero/10000)
+print("Percent of 1s")
+print(one/10000)
+print("Percent of 2s")
+print(two/10000)
+print("Percent of 3s")
+print(three/10000)
+print("Percent of 4s")
+print(four/10000)
+print("Percent of 5s")
+print(five/10000)
+print("Percent of 6s")
+print(six/10000)
+print("Percent of 7s")
+print(seven/10000)
+print("Percent of 8s")
+print(eight/10000)
