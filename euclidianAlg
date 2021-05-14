@@ -1,0 +1,14 @@
+import random
+def euclid(m,n):
+  while True: 
+    r = m % n #remainder
+    m = n #moving n over for next round's computation
+    n = r #moving r over for next round's computation
+    if r == 0:  #once we have fully divided, stop
+      return m  #this will be GCD
+
+
+for i in range(100):
+  a = random.randint(1, 9999999)
+  b = random.randint(1, 9999999)
+  print(a, "    ", b, "   ", euclid(a, b))
