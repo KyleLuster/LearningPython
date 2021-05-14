@@ -1,0 +1,32 @@
+def logicalAnd(p, q):
+  if p and q:
+     return 'T'
+  else:
+       return 'F'
+
+def logicalOr(p, q):
+  if p or q:
+    return 'T'
+  else:
+    return 'F'
+
+def logicalIF(p, q):
+  if p == True and q == False:
+    return 'F'
+  else:
+    return 'T'
+
+def logicalIFF(p,q):
+  return p == q
+
+vals = [True, False]
+for p in vals:
+    for q in vals:
+      print(p,q, logicalAnd(p, q))
+      
+print(' ')
+
+vals = [True, False]
+for p in vals:
+    for q in vals:
+      print(p,q, logicalOr(p, q))
