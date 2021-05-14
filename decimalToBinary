@@ -1,0 +1,17 @@
+#this grabs the user's number
+userInput = input("Give a big number! ")
+#this counts the number of binary 1s
+counter = 0
+#assigning the user's input as an integer and making val
+#equal to it
+val = int(userInput)
+#this evaluates the input
+while(val > 0):
+#mod evaluating the remainder
+  if(val % 2 == 1):
+#incrementing the counter based on number of 1s in binary
+    counter = counter + 1
+  val = int(val / 2)
+#converting to binary
+toBinary = bin(int(userInput))[2:]
+print("(" + str(counter) + ", " + str(toBinary) + ")")
