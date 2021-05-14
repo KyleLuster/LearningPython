@@ -1,0 +1,21 @@
+import collections
+
+de = collections.deque([20,52,99])
+
+#this adds to the right side
+de.append(13)
+
+print(de)
+
+#adds to left
+de.appendleft(12)
+
+print(de)
+
+#pops right
+de.pop()
+
+#pops left
+de.popleft()
+
+print(de)
