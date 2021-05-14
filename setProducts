@@ -1,0 +1,44 @@
+#creating sets
+setA = set()
+setB = set()
+setC = set()
+from random import randint
+
+#adding to each set
+setA.add(randint(0,100))
+setA.add(randint(0,100))
+setB.add(randint(0,100))
+setB.add(randint(0,100))
+setC.add(randint(0,100))
+setC.add(randint(0,100))
+
+#printing sets
+print(setA)
+print(setB)
+print(setC)
+
+#calculating the products of the sets
+print("PRODUCTS BELOW")
+
+import itertools
+
+mySets = [
+setA,
+setB,
+]
+for element in itertools.product(*mySets):
+    print(element)
+
+mySets = [
+setA,
+setC,
+]
+for element in itertools.product(*mySets):
+    print(element)
+
+mySets = [
+setB,
+setC,
+]
+for element in itertools.product(*mySets):
+    print(element)
